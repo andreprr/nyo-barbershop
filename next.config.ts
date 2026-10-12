@@ -15,6 +15,18 @@ const nextConfig: NextConfig = {
       },
     },
   },
+
+  // Tambahkan blok images ini untuk mengizinkan gambar dari Unsplash
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
