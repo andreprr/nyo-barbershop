@@ -3,6 +3,7 @@ export const siteData = {
         eyebrow: "GOOD CUTS. NO SHORTCUTS.",
         headline: "NOT YOUR ORDINARY BARBER",
         description: "Precision cuts, premium service, and a style that's uniquely yours.",
+        bookUrl: "https://widget.zenwel.com/43073844/nyo-barbershop?lang=id",
     },
     stats: [
         { label: "Happy Clients", value: "10K+" },
@@ -15,32 +16,118 @@ export const siteData = {
         { name: "Haircut & Beard", description: "Complete look, sharper you.", price: "FROM $45" },
     ],
     socials: {
-        instagram: "#",
-        tiktok: "#",
+        instagram: "https://www.instagram.com/nyo.barbershop/",
+        tiktok: "https://www.tiktok.com/@nyo.barbershop",
         whatsapp: "#",
     },
     locations: [
         {
-            id: "wahid-hasyim",
-            name: "WAHID HASYIM",
-            category: "BARBER",
-            description: "Precision cuts, clean fades, modern style.",
+            id: 1,
+            name: "Wahid Hasyim",
+            category: "PREMIUM BARBERSHOP",
+            description: "Experience premium grooming in the heart of the city.",
             image: "/images/hasyim.jpg",
-            priceListImage: "/images/pl-hasyim.jpeg",
-            mapEmbedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0383077685747!2d98.65504457520186!3d3.578671350361716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f56d5bc2a0f%3A0x68e00ef0d5579ddc!2sNYO%20BARBERSHOP!5e0!3m2!1sid!2sid!4v1791786176844!5m2!1sid!2sid",
-            bookUrl: "#book-wahid-hasyim"
+            openHours: "10.00 - 22.00",
+            mapEmbedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0383077685747!2d98.65504457520186!3d3.578671350361716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f56d5bc2a0f%3A0x68e00ef0d5579ddc!2sNYO%20BARBERSHOP!5e0!3m2!1sid!2sid!4v1791786176844!5m2!1sid!2sid://www.google.com/maps/embed?pb=...", // (Biarkan URL asli Anda)
+            bookUrl: "https://widget.zenwel.com/43073844/nyo-barbershop?lang=id",
+            contactPhone: "+62 853-7383-7114",
+            priceListData: [
+                {
+                    title: "HAIR CUT",
+                    items: [
+                        { name: "TATANG", originalPrice: "300 K", price: "200 K" },
+                        { name: "DIAN", price: "110 K" },
+                        { name: "DIMAS", price: "110 K" },
+                        { name: "GIO", price: "110 K" },
+                        { name: "PORA", price: "110 K" },
+                        { name: "OZIE", price: "110 K" },
+                        { name: "HENDRA", price: "110 K" },
+                        { name: "SEPTIAN", price: "110 K" },
+                        { name: "HAFIZ", price: "110 K" },
+                    ]
+                },
+                {
+                    title: "BLOW AND STYLE",
+                    items: [
+                        { name: "WASH AND BLOW", price: "50 K" },
+                    ]
+                },
+                {
+                    title: "COLOR AND BLEACH",
+                    items: [
+                        { name: "FASHION COLOR", price: "500 K - 1.500 K" },
+                        { name: "HIGHLIGHT COLOR", price: "400 K - 1.000 K" },
+                        { name: "BASIC COLOR", price: "150 K" },
+                    ]
+                },
+                {
+                    title: "TEXTURING AND CONDITIONING",
+                    items: [
+                        { name: "CURLY PERM", price: "350 K - 500 K" },
+                        { name: "WAVY PERM", price: "400 K" },
+                        { name: "KERATIN", price: "350 K - 500 K" },
+                        { name: "DOWN PERM", price: "150 K" },
+                        { name: "DOWN PERM + ROOTLIFT", price: "250 K" },
+                        { name: "ROOTLIFT", price: "100 K" },
+                    ]
+                }
+            ]
         },
         {
-            id: "patimura",
-            name: "PATTIMURA",
-            category: "BARBER",
-            description: "Classic style, modern touch, made for you.",
+            id: 2,
+            name: "Pattimura",
+            category: "EXECUTIVE BARBERSHOP",
+            description: "A private and exclusive space for gentlemen.",
             image: "/images/patimura.jpeg",
-            priceListImage: "/images/pl-patimura.jpeg",
-            mapEmbedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.055096487103!2d98.66208187520188!3d3.5748067503881797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131f30c7ea0a1%3A0x9e9f63c21a6fa3a8!2sNYOB%20Barbershop!5e0!3m2!1sid!2sid!4v1791786195799!5m2!1sid!2sid",
-            bookUrl: "#book-patimura"
+            openHours: "10.00 - 21.00",
+            mapEmbedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.055096487103!2d98.66208187520188!3d3.5748067503881797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131f30c7ea0a1%3A0x9e9f63c21a6fa3a8!2sNYOB%20Barbershop!5e0!3m2!1sid!2sid!4v1791786195799!5m2!1sid!2sid", // (Biarkan URL asli Anda)
+            bookUrl: "https://widget.zenwel.com/43073844/nyo-barbershop?lang=id",
+            contactPhone: "+62 813-7893-4161",
+            priceListData: [
+                {
+                    title: "HAIR CUT",
+                    items: [
+                        { name: "WATEK", price: "125 K" },
+                        { name: "ABI", price: "125 K" },
+                        { name: "DENI", price: "125 K" },
+                        { name: "TIAN", price: "120 K" },
+                        { name: "ARI", price: "120 K" },
+                        { name: "RIO", price: "120 K" },
+                    ]
+                },
+                {
+                    title: "SHAVE BEARD",
+                    items: [
+                        { name: "RAZOR", price: "60 K" },
+                    ]
+                },
+                {
+                    title: "BLOW AND STYLE",
+                    items: [
+                        { name: "WASH AND BLOW", price: "50 K" },
+                    ]
+                },
+                {
+                    title: "COLOR AND BLEACH",
+                    items: [
+                        { name: "FASHION COLOR", price: "500 K - 1.500 K" },
+                        { name: "HIGHLIGHT COLOR", price: "400 K - 800 K" },
+                        { name: "BASIC COLOR", price: "150 K" },
+                    ]
+                },
+                {
+                    title: "TEXTURING AND CONDITIONING",
+                    items: [
+                        { name: "DOWN PERM", price: "150 K" },
+                        { name: "DOWN AND ROOT LIFT", price: "200 K" },
+                        { name: "COLD PERM", price: "350 K - 500 K" },
+                        { name: "SMOOTHING", price: "Start From 300 K" },
+                    ]
+                }
+            ]
         }
     ],
+
     reviews: [
         { id: 1, name: "Reza Rahadian", rating: 5, text: "Tempat potong rambut terbaik sejauh ini. Barbernya sangat detail dan paham bentuk kepala saya. Suasana premium dan sangat higienis!" },
         { id: 2, name: "Budi Santoso", rating: 5, text: "Harga sesuai dengan kualitas. Fade-nya sangat rapi. Bakal jadi tempat langganan baru nih." },

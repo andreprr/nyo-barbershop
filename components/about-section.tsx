@@ -1,11 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { Scissors, Star } from "lucide-react";
 
 export default function AboutSection() {
     return (
-        // Menggunakan trik margin negatif (100vw) agar gambar benar-benar menyentuh ujung layar kiri & kanan
-        // Class rounded dan border telah dihapus
-        <section id="about" className="relative w-[100vw] left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden mt-20 py-24 lg:py-32">
+        // Menggunakan teknik w-screen dan translate-x untuk full-bleed yang jauh lebih stabil di mobile
+        <section id="about" className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden mt-12 md:mt-20 py-16 md:py-24 lg:py-32">
 
             {/* GAMBAR BACKGROUND */}
             <div className="absolute inset-0 z-0">
@@ -13,39 +14,42 @@ export default function AboutSection() {
                     src="/images/about.png"
                     alt="NYOB About Background"
                     fill
+                    sizes="100vw"
                     className="object-cover object-center"
                 />
-                {/* Efek Blur Dihapus! Hanya menggunakan lapisan hitam transparan 50% agar gambar alat cukur sangat jelas */}
-                <div className="absolute inset-0 bg-black/50"></div>
+                {/* Overlay sedikit lebih gelap di mobile (70%) agar teks putih sangat mudah dibaca, 50% di desktop */}
+                <div className="absolute inset-0 bg-black/70 md:bg-black/50 transition-colors duration-300"></div>
             </div>
 
             {/* KONTEN UTAMA */}
-            {/* Menggunakan max-w-[1600px] dan padding agar posisi teks tetap lurus sejajar dengan Hero Banner */}
-            <div className="relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-24 px-4 md:px-6 lg:px-12 max-w-[1600px] mx-auto w-full">
+            <div className="relative z-10 flex flex-col lg:flex-row gap-10 lg:gap-24 px-5 md:px-6 lg:px-12 max-w-[1600px] mx-auto w-full">
 
                 {/* KOLOM KIRI: Judul & Branding */}
                 <div className="lg:w-5/12 flex flex-col justify-start">
-                    <div className="flex items-center gap-4 text-xs font-bold tracking-widest text-gray-300 uppercase mb-8">
-                        <span className="w-12 h-px bg-gray-400"></span>
+                    <div className="flex items-center gap-4 text-[10px] md:text-xs font-bold tracking-widest text-gray-300 uppercase mb-6 md:mb-8">
+                        <span className="w-8 md:w-12 h-px bg-gray-400"></span>
                         THE CRAFT
                     </div>
 
-                    <h2 className="text-6xl md:text-[5.5rem] leading-[0.9] font-extrabold tracking-tight text-white mb-4 drop-shadow-lg">
+                    {/* Ukuran teks disesuaikan untuk mobile (text-5xl) agar tidak tumpah */}
+                    <h2 className="text-5xl md:text-6xl lg:text-[5.5rem] leading-[0.9] font-extrabold tracking-tight text-white mb-3 md:mb-4 drop-shadow-lg">
                         NYOB.
                     </h2>
-                    <p className="text-sm md:text-base font-extrabold tracking-[0.2em] text-gray-200 uppercase mb-10 drop-shadow-md">
+
+                    {/* Tagline responsif */}
+                    <p className="text-xs md:text-sm lg:text-base font-extrabold tracking-[0.15em] md:tracking-[0.2em] text-gray-200 uppercase mb-8 md:mb-10 drop-shadow-md">
                         Not Your Ordinary Barbershop
                     </p>
 
                     {/* Badge Tahun Berdiri */}
-                    <div className="inline-flex items-center gap-3 border border-white/40 rounded-full px-6 py-2.5 w-max bg-black/30 backdrop-blur-sm">
-                        <Star size={16} className="fill-white text-white" />
-                        <span className="text-xs font-bold tracking-widest uppercase text-white">EST. 2020 — PRESENT</span>
+                    <div className="inline-flex items-center gap-2 md:gap-3 border border-white/40 rounded-full px-4 md:px-6 py-2 md:py-2.5 w-max bg-black/30 backdrop-blur-sm shadow-sm">
+                        <Star size={14} className="fill-white text-white md:w-4 md:h-4" />
+                        <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white">EST. 2020 — PRESENT</span>
                     </div>
                 </div>
 
                 {/* KOLOM KANAN: Konten Cerita */}
-                <div className="lg:w-7/12 flex flex-col gap-6 text-gray-100 font-medium leading-relaxed md:text-lg">
+                <div className="lg:w-7/12 flex flex-col gap-4 md:gap-6 text-gray-200 md:text-gray-100 font-medium leading-relaxed text-sm md:text-lg">
                     <p className="drop-shadow-md">
                         <strong className="text-white">NYOB</strong> adalah sebuah konsep barbershop kolaborasi antara 2 negara yaitu Singapore dan Indonesia yang telah berdiri sejak tahun 2020 hingga saat ini.
                     </p>
@@ -59,15 +63,17 @@ export default function AboutSection() {
                     </p>
 
                     {/* Highlight Box untuk Filosofi Harga */}
-                    <div className="bg-black/30 backdrop-blur-md p-8 md:p-10 rounded-[32px] shadow-2xl border border-white/20 mt-6 relative overflow-hidden group">
-                        {/* Aksen Ikon Watermark di latar belakang */}
-                        <Scissors size={120} className="absolute -bottom-6 -right-6 text-white/10 group-hover:scale-110 transition-transform duration-700" />
+                    {/* Padding dan rounded corner diperkecil untuk mobile */}
+                    <div className="bg-black/40 md:bg-black/30 backdrop-blur-md p-6 md:p-10 rounded-[24px] md:rounded-[32px] shadow-2xl border border-white/20 mt-4 md:mt-6 relative overflow-hidden group">
+
+                        {/* Aksen Ikon Watermark - ukurannya menyesuaikan layar */}
+                        <Scissors className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 text-white/10 group-hover:scale-110 transition-transform duration-700 w-[80px] h-[80px] md:w-[120px] md:h-[120px]" />
 
                         <div className="relative z-10">
-                            <p className="text-white font-bold text-lg md:text-xl leading-snug drop-shadow-md">
+                            <p className="text-white font-bold text-base md:text-xl leading-snug drop-shadow-md">
                                 "Harga cukur bervariasi sesuai dengan tingkat skill dari Barber."
                             </p>
-                            <p className="text-gray-300 text-sm mt-4 font-medium drop-shadow-md">
+                            <p className="text-gray-300 text-xs md:text-sm mt-3 md:mt-4 font-medium drop-shadow-md">
                                 Hal ini bertujuan untuk memberikan motivasi kepada barber untuk selalu memberikan pelayanan dan kualitas cukur yang terbaik tanpa henti.
                             </p>
                         </div>

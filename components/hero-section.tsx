@@ -69,7 +69,7 @@ export default function HeroSection() {
                     {/* Buttons */}
                     <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
                         <Link
-                            href="#book"
+                            href={siteData.hero.bookUrl} target="_blank"
                             className="inline-flex items-center gap-2 md:gap-3 bg-white text-black px-6 md:px-8 py-3.5 md:py-4 rounded-full text-xs md:text-sm font-bold uppercase tracking-wider hover:bg-gray-200 transition-all shadow-sm"
                         >
                             BOOK YOUR CUT <ArrowRight size={18} />

@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react"; // Tambahkan ikon X untuk tombol tutup
 import { useState, useEffect } from "react";
+import { siteData } from "@/data/site-data";
+
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -35,8 +37,8 @@ export default function Navbar() {
         <>
             <nav
                 className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled || isOpen
-                        ? "bg-gray-900/90 backdrop-blur-md border-b border-white/10 shadow-sm" // Gelap saat discroll ATAU saat menu terbuka
-                        : "bg-transparent"
+                    ? "bg-gray-900/90 backdrop-blur-md border-b border-white/10 shadow-sm" // Gelap saat discroll ATAU saat menu terbuka
+                    : "bg-transparent"
                     }`}
             >
                 <div className="max-w-[1600px] mx-auto px-6 lg:px-12 h-16 md:h-20 flex items-center justify-between">
@@ -62,10 +64,10 @@ export default function Navbar() {
 
                     <div className="flex items-center gap-4 z-50">
                         <Link
-                            href="#book"
+                            href={siteData.hero.bookUrl} target="_blank"
                             className={`hidden md:inline-flex px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm ${isScrolled
-                                    ? "bg-white text-black hover:bg-gray-200"
-                                    : "bg-black text-white hover:bg-gray-800"
+                                ? "bg-white text-black hover:bg-gray-200"
+                                : "bg-black text-white hover:bg-gray-800"
                                 }`}
                         >
                             Book Now
@@ -94,7 +96,7 @@ export default function Navbar() {
                 <Link href="#team" onClick={() => setIsOpen(false)} className="text-2xl font-bold tracking-widest text-white uppercase hover:text-gray-400 transition-colors">Our Barbers</Link>
                 <Link href="#reviews" onClick={() => setIsOpen(false)} className="text-2xl font-bold tracking-widest text-white uppercase hover:text-gray-400 transition-colors">Reviews</Link>
 
-                <Link href="#book" onClick={() => setIsOpen(false)} className="mt-8 bg-white text-black px-10 py-4 rounded-full text-sm font-bold uppercase tracking-wider">
+                <Link href={siteData.hero.bookUrl} target="_blank" onClick={() => setIsOpen(false)} className="mt-8 bg-white text-black px-10 py-4 rounded-full text-sm font-bold uppercase tracking-wider">
                     Book Your Cut
                 </Link>
             </div>

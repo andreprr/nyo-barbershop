@@ -64,7 +64,7 @@ export default function Footer() {
                                     <MapPin size={18} className="text-white shrink-0 mt-0.5" />
                                     <div>
                                         <p className="font-bold text-white uppercase tracking-wider mb-1">Wahid Hasyim</p>
-                                        <p className="text-xs">Jl. KH. Wahid Hasyim, Medan</p>
+                                        <p className="text-xs">Jl. K.H. Wahid Hasyim (No. 53/28), Babura, Kec. Medan Baru, Kota Medan.</p>
                                     </div>
                                 </div>
                             </li>
@@ -73,7 +73,7 @@ export default function Footer() {
                                     <MapPin size={18} className="text-white shrink-0 mt-0.5" />
                                     <div>
                                         <p className="font-bold text-white uppercase tracking-wider mb-1">Pattimura</p>
-                                        <p className="text-xs">Jl. Pattimura, Medan</p>
+                                        <p className="text-xs">Jl. Kapten Patimura No.342, Darat, Kec. Medan Baru, Kota Medan.</p>
                                     </div>
                                 </div>
                             </li>
@@ -87,7 +87,7 @@ export default function Footer() {
                             SECURE YOUR <br /> SEAT TODAY.
                         </h2>
                         <Link
-                            href="#book"
+                            href={siteData.hero.bookUrl} target="_blank"
                             className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-gray-300 transition-all shadow-sm"
                         >
                             BOOK NOW <ArrowUpRight size={18} />
