@@ -18,7 +18,7 @@ export const siteData = {
     socials: {
         instagram: "https://www.instagram.com/nyo.barbershop/",
         tiktok: "https://www.tiktok.com/@nyo.barbershop",
-        whatsapp: "#",
+        whatsapp: "https://wa.me/6285373837114",
     },
     locations: [
         {

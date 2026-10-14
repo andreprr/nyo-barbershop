@@ -5,6 +5,7 @@ import AboutSection from "@/components/about-section";
 import OurTeamSection from "@/components/our-team-section";
 import ReviewSection from "@/components/review-section";
 import Footer from "@/components/footer";
+import StickySocials from "@/components/sticky-socials";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <ReviewSection />
       </main>
       <Footer />
+      <StickySocials />
     </>
   );
 }
