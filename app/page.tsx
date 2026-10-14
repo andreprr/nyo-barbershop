@@ -4,7 +4,7 @@ import LocationsSection from "@/components/locations-section";
 import AboutSection from "@/components/about-section";
 import OurTeamSection from "@/components/our-team-section";
 import ReviewSection from "@/components/review-section";
-import Footer from "@/components/footer"; // IMPORT FOOTER
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (

@@ -43,14 +43,22 @@ export default function Navbar() {
             >
                 <div className="max-w-[1600px] mx-auto px-6 lg:px-12 h-16 md:h-20 flex items-center justify-between">
 
-                    <Link href="/" className="flex items-center z-50" onClick={() => setIsOpen(false)}>
+                    <Link
+                        href="/"
+                        className="flex items-center gap-3 md:gap-4 z-50 group"
+                        onClick={() => setIsOpen(false)}
+                    >
                         <Image
-                            src="/images/logonyob.png"
+                            src="/images/LOGO NYOB FONT ATAS.png"
                             alt="NYO Barbershop Logo"
-                            width={70}
-                            height={70}
-                            className="object-contain h-10 md:h-12 w-auto transition-transform duration-300 hover:scale-105"
+                            width={340}
+                            height={160}
+                            className="object-contain h-28 md:h-36 lg:h-44 w-auto -my-6 md:-my-8 lg:-my-10 transition-transform duration-300 group-hover:scale-105"
+                            priority
                         />
+                        <span className="bg-black text-white text-xs md:text-sm font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
+                            Medan
+                        </span>
                     </Link>
 
                     {/* Desktop Menu */}
