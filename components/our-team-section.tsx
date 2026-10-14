@@ -4,25 +4,25 @@ import Image from "next/image";
 
 // Data Tim Pattimura
 const teamPattimura = [
-    { name: "ABI", image: "/team/ABI.jpg" },
-    { name: "ARI", image: "/team/ARI.jpg" },
-    { name: "DENNY", image: "/team/DENNY.jpg" },
-    { name: "RIO", image: "/team/RIO.jpg" },
-    { name: "TIAN", image: "/team/TIAN.jpg" },
-    { name: "WATEK", image: "/team/WATEK.jpg" },
+    { name: "ABI", image: "/team/abi.jpg" },
+    { name: "ARI", image: "/team/ari.jpg" },
+    { name: "DENNY", image: "/team/denny.jpg" },
+    { name: "RIO", image: "/team/rio.jpg" },
+    { name: "TIAN", image: "/team/tian.jpg" },
+    { name: "WATEK", image: "/team/watek.jpg" },
 ];
 
 // Data Tim Wahid Hasyim
 const teamWahidHasyim = [
-    { name: "DIAN", image: "/team/DIAN.jpg" },
-    { name: "DIMAS", image: "/team/DIMAS.jpg" },
-    { name: "GIO", image: "/team/GIO.jpg" },
-    { name: "HAFIZ", image: "/team/HAFIZ.jpg" },
-    { name: "HENDRA", image: "/team/HENDRA.jpg" },
-    { name: "OZIE", image: "/team/OZIE.jpg" },
-    { name: "PORA", image: "/team/PORA.jpg" },
-    { name: "SEPTIAN", image: "/team/SEPTIAN.jpg" },
-    { name: "TATANG", image: "/team/TATANG.jpg" },
+    { name: "DIAN", image: "/team/dian.jpg" },
+    { name: "DIMAS", image: "/team/dimas.jpg" },
+    { name: "GIO", image: "/team/gio.jpg" },
+    { name: "HAFIZ", image: "/team/hafiz.jpg" },
+    { name: "HENDRA", image: "/team/hendra.jpg" },
+    { name: "OZIE", image: "/team/ozie.jpg" },
+    { name: "PORA", image: "/team/pora.jpg" },
+    { name: "SEPTIAN", image: "/team/septian.jpg" },
+    { name: "TATANG", image: "/team/tatang.jpg" },
 ];
 
 export default function OurTeamSection() {
@@ -91,7 +91,8 @@ export default function OurTeamSection() {
                                         src={barber.image}
                                         alt={barber.name}
                                         fill
-                                        className="object-cover group-hover:scale-105 transition-all duration-500"
+                                        sizes="(max-width: 768px) 180px, 220px"
+                                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                                     />
                                 </div>
                                 <h4 className="text-base md:text-lg font-bold text-center text-black uppercase tracking-wider">{barber.name}</h4>
@@ -120,7 +121,8 @@ export default function OurTeamSection() {
                                         src={barber.image}
                                         alt={barber.name}
                                         fill
-                                        className="object-cover group-hover:scale-105 transition-all duration-500"
+                                        sizes="(max-width: 768px) 180px, 220px"
+                                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                                     />
                                 </div>
                                 <h4 className="text-base md:text-lg font-bold text-center text-black uppercase tracking-wider">{barber.name}</h4>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import Preloader from "@/components/preloader";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${manrope.className} bg-[#F7F7F7] min-h-screen flex flex-col overflow-x-hidden antialiased`}>
+        <Preloader />
         {children}
       </body>
     </html>

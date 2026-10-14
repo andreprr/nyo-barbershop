@@ -35,6 +35,7 @@ export default function LocationsSection() {
                                 src={location.image}
                                 alt={`Cabang ${location.name}`}
                                 fill
+                                sizes="(max-width: 640px) 100vw, 192px"
                                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                             />
                         </div>
