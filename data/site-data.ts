@@ -28,7 +28,7 @@ export const siteData = {
             description: "Experience premium grooming in the heart of the city.",
             image: "/images/hasyim.jpg",
             openHours: "10.00 - 22.00",
-            mapEmbedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0383077685747!2d98.65504457520186!3d3.578671350361716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f56d5bc2a0f%3A0x68e00ef0d5579ddc!2sNYO%20BARBERSHOP!5e0!3m2!1sid!2sid!4v1791786176844!5m2!1sid!2sid://www.google.com/maps/embed?pb=...", // (Biarkan URL asli Anda)
+            mapEmbedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0383077685747!2d98.65504457520186!3d3.578671350361716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f56d5bc2a0f%3A0x68e00ef0d5579ddc!2sNYO%20BARBERSHOP!5e0!3m2!1sid!2sid!4v1791786176844!5m2!1sid!2sid",
             bookUrl: "https://widget.zenwel.com/43073844/nyo-barbershop?lang=id",
             contactPhone: "+62 853-7383-7114",
             priceListData: [
