@@ -7,7 +7,7 @@ import { ArrowRight, Play } from "lucide-react";
 import { siteData } from "@/data/site-data";
 
 const heroImages = [
-    "/images/NYOB BANNER.webp",
+    "/images/NYOBBANNER.mp4",
     "/images/BANNER NYOB.webp",
     "/images/BANNER NYOB 3.webp",
 ];
@@ -25,23 +25,43 @@ export default function HeroSection() {
     return (
         <section className="relative w-full rounded-[20px] sm:rounded-[24px] lg:rounded-[36px] overflow-hidden bg-black h-auto lg:aspect-[16/8] lg:min-h-[520px] xl:min-h-[600px] shadow-sm flex flex-col lg:block isolate">
 
-            {/* CAROUSEL BACKGROUND IMAGES */}
+            {/* Hidden H1 untuk SEO & Aksesibilitas */}
+            <h1 className="sr-only">NYOB - Not Your Ordinary Barbershop Medan</h1>
+
+            {/* CAROUSEL BACKGROUND (MENDUKUNG VIDEO MP4 & GAMBAR WEBP) */}
             <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-auto lg:absolute lg:inset-0 z-0 overflow-hidden bg-black shrink-0">
-                {heroImages.map((src, index) => (
-                    <div
-                        key={index}
-                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
-                    >
-                        <Image
-                            src={src}
-                            alt={`Hero Barbershop ${index + 1}`}
-                            fill
-                            sizes="100vw"
-                            className="object-cover object-center lg:object-right opacity-95"
-                            priority={index === 0}
-                        />
-                    </div>
-                ))}
+                {heroImages.map((src, index) => {
+                    const isVideo = /\.(mp4|webm|mov)$/i.test(src);
+
+                    return (
+                        <div
+                            key={index}
+                            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0 pointer-events-none"
+                                }`}
+                        >
+                            {isVideo ? (
+                                <video
+                                    src={src}
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    preload="auto"
+                                    className="w-full h-full object-cover object-center lg:object-right opacity-95"
+                                />
+                            ) : (
+                                <Image
+                                    src={src}
+                                    alt={`Hero Barbershop ${index + 1}`}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 1200px"
+                                    className="object-cover object-center lg:object-right opacity-95"
+                                    priority={index === 0}
+                                />
+                            )}
+                        </div>
+                    );
+                })}
 
                 {/* Gradasi bawah tipis di Mobile/Tablet agar menyatu mulus dengan area hitam di bawahnya */}
                 <div className="lg:hidden absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
@@ -56,7 +76,8 @@ export default function HeroSection() {
                         <button
                             key={idx}
                             onClick={() => setCurrentSlide(idx)}
-                            className={`h-1.5 rounded-full transition-all ${currentSlide === idx ? "w-5 bg-white" : "w-1.5 bg-white/40"}`}
+                            className={`h-1.5 rounded-full transition-all ${currentSlide === idx ? "w-5 bg-white" : "w-1.5 bg-white/40"
+                                }`}
                             aria-label={`Slide ${idx + 1}`}
                         />
                     ))}
@@ -72,11 +93,17 @@ export default function HeroSection() {
                         <div key={idx} className="flex flex-col items-center gap-2.5">
                             <button
                                 onClick={() => setCurrentSlide(idx)}
-                                className={`w-9 h-9 rounded-full flex items-center justify-center text-[10px] font-bold transition-all shadow-md ${currentSlide === idx ? "bg-white text-black" : "border border-white/50 text-white backdrop-blur-sm hover:bg-white/20"}`}
+                                className={`w-9 h-9 rounded-full flex items-center justify-center text-[10px] font-bold transition-all shadow-md ${currentSlide === idx
+                                        ? "bg-white text-black"
+                                        : "border border-white/50 text-white backdrop-blur-sm hover:bg-white/20"
+                                    }`}
+                                aria-label={`Slide ${idx + 1}`}
                             >
                                 0{idx + 1}
                             </button>
-                            {idx < heroImages.length - 1 && <span className="w-px h-8 bg-white/40"></span>}
+                            {idx < heroImages.length - 1 && (
+                                <span className="w-px h-8 bg-white/40"></span>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -89,11 +116,13 @@ export default function HeroSection() {
                         <Link
                             href={siteData.hero.bookUrl}
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 md:gap-3 bg-white text-black px-5 sm:px-7 py-3 sm:py-3.5 rounded-full text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-wider hover:bg-gray-200 transition-all shadow-sm"
                         >
                             BOOK YOUR CUT <ArrowRight size={16} />
                         </Link>
                         <button
+                            type="button"
                             aria-label="Play video"
                             className="bg-white text-black w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center hover:bg-gray-200 transition-all shadow-sm group shrink-0"
                         >
@@ -154,7 +183,7 @@ export default function HeroSection() {
                 </svg>
 
                 <div className="flex justify-between items-center mb-2 sm:mb-3 lg:mb-4">
-                    <h3 className="font-bold text-sm sm:text-base lg:text-lg text-black">Our Locations</h3>
+                    <h2 className="font-bold text-sm sm:text-base lg:text-lg text-black">Our Locations</h2>
                     <ArrowRight size={18} className="text-black group-hover:translate-x-1 transition-transform" />
                 </div>
 
@@ -181,7 +210,7 @@ export default function HeroSection() {
                     </div>
                     <div className="text-xs min-w-0">
                         <p className="font-bold text-black mb-0.5 truncate">Wahid Hasyim & Pattimura</p>
-                        <p className="text-gray-500 text-[10px] sm:text-[11px] leading-tight">Find your nearest chair.</p>
+                        <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight">Find your nearest chair.</p>
                     </div>
                 </div>
             </Link>
